@@ -81,6 +81,7 @@ router.get('/documento/:documento_identificacao', async (req, res) => {
     }
 })
 
+// Por telefone
 router.get('/telefone/:telefone', async (req, res) => {
 
     const telefone = req.params.telefone
