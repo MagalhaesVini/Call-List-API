@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-app.use(express.urlencoded({extended: true,}),)
+app.use(express.urlencoded({ extended: true, }),)
 app.use(express.json())
 const port = process.env.PORT || 3000;
 
@@ -25,7 +25,10 @@ mongoose.connect(
 )
     .then(() => {
         console.log("Banco conectado com sucesso");
-        app.listen(3000);
+
+        app.listen(port, () => {
+            console.log(`Servidor rodando na porta ${port}`);
+        });
     })
     .catch((err) => console.log(err));
 
