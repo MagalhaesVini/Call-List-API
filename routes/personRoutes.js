@@ -68,9 +68,9 @@ router.get('/documento/:documento_identificacao', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.findOne({ documento_identificacao : documento })
+        const pessoa = await Person.findOne({ documento_identificacao: documento })
 
-        if(!pessoa) {
+        if (!pessoa) {
             res.status(422).json({ msg: 'A pessoa não foi encontrada' })
             return
         }
@@ -88,9 +88,38 @@ router.get('/telefone/:telefone', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.find({ telefone : telefone })
+        const pessoa = await Person.find({ telefone: telefone })
 
         res.status(200).json(pessoa)
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
+
+//Atualizar
+router.patch('/documento/:documento_identificacao', async (req, res) => {
+
+    const documento = req.params.documento_identificacao
+
+    const {
+        nome,
+        documento_identificacao,
+        tipo_pessoa,
+        telefone,
+    } = req.body
+
+    const person = {
+        nome,
+        documento_identificacao,
+        tipo_pessoa,
+        telefone,
+    }
+
+    try {
+
+        const updatePerson = await Person.updateOne({ documento_identificacao: documento }, person)
+
+        res.status(200).json(person)
     } catch (error) {
         res.status(500).json({ error: error })
     }
