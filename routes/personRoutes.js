@@ -54,11 +54,6 @@ router.get('/:nome', async (req, res) => {
 
         const pessoa = await Person.find({ nome: nome })
 
-        if(!pessoa) {
-            res.status(422).json({ msg: 'A pessoa não foi encontrada' })
-            return
-        }
-
         res.status(200).json(pessoa)
     } catch (error) {
         res.status(500).json({ error: error })
@@ -74,7 +69,7 @@ router.get('/documento/:documento_identificacao', async (req, res) => {
     try {
 
         const pessoa = await Person.findOne({ documento_identificacao : documento })
-        
+
         if(!pessoa) {
             res.status(422).json({ msg: 'A pessoa não foi encontrada' })
             return
@@ -92,7 +87,7 @@ router.get('/telefone/:telefone', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.findOne({ telefone : telefone })
+        const pessoa = await Person.find({ telefone : telefone })
 
         res.status(200).json(pessoa)
     } catch (error) {
