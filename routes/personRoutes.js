@@ -141,8 +141,15 @@ router.delete('/documento/:documento_identificacao', async (req, res) => {
         return res.status(422).json({ msg: 'A pessoa não foi encontrada' });
     }
 
-    // Pessoa encontrada com sucesso
-    return res.status(200).json({ msg: 'Pessoa excluída com sucesso' });
+    try {
+
+        await Person.deleteOne({ documento_identificacao: documento })
+        return res.status(200).json({ msg: 'Pessoa excluída com sucesso' })
+
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+
 });
 
 
