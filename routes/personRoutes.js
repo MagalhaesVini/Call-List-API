@@ -52,7 +52,7 @@ router.get('/:nome', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.find({ nome: { $regex: sequencia, $options: 'i' } })
+        const pessoa = await Person.find({ nome: nome })
 
         res.status(200).json(pessoa)
     } catch (error) {
