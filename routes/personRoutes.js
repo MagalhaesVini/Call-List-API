@@ -74,6 +74,11 @@ router.get('/documento/:documento_identificacao', async (req, res) => {
     try {
 
         const pessoa = await Person.findOne({ documento_identificacao : documento })
+        
+        if(!pessoa) {
+            res.status(422).json({ msg: 'A pessoa não foi encontrada' })
+            return
+        }
 
         res.status(200).json(pessoa)
     } catch (error) {
