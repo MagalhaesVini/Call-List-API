@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
 
     if (!nome) {
         res.status(422).json({ error: 'O nome é obrigatório!' })
+        return
     }
 
     const person = {
@@ -52,6 +53,11 @@ router.get('/:nome', async (req, res) => {
     try {
 
         const pessoa = await Person.find({ nome: nome })
+
+        if(!pessoa) {
+            res.status(422).json({ msg: 'A pessoa não foi encontrada' })
+            return
+        }
 
         res.status(200).json(pessoa)
     } catch (error) {
