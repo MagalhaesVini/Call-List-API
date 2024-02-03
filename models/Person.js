@@ -4,7 +4,7 @@ const Person = mongoose.model('Person', {
     nome: String,
     documento_identificacao: Number,
     empresa: String,
-    orgão_setor: String,
+    setor: String,
     endereço: String,
     comercial: Number,
     celular: Number,
