@@ -109,7 +109,7 @@ router.patch('/documento/:documento_identificacao', async (req, res) => {
         nome,
         documento_identificacao,
         empresa,
-        orgão_setor,
+        orgao_setor,
         endereço,
         comercial,
         celular,
