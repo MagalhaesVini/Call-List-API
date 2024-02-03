@@ -21,7 +21,7 @@ const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASSWORD
 
 mongoose.connect(
-    `mongodb+srv://${dbUser}:${dbPassword}@agenda.kwudaoj.mongodb.net/test?retryWrites=true&w=majority`
+    `mongodb+srv://${dbUser}:${dbPassword}@agenda.kwudaoj.mongodb.net/lista?retryWrites=true&w=majority`
 )
     .then(() => {
         console.log("Banco conectado com sucesso");
