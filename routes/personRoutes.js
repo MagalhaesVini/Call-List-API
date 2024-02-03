@@ -16,8 +16,12 @@ router.post('/', async (req, res) => {
     const person = {
         nome,
         documento_identificacao,
-        tipo_pessoa,
-        telefone,
+        empresa,
+        orgão_setor,
+        endereço,
+        comercial,
+        celular,
+        outros,
     }
 
     try {
@@ -81,14 +85,14 @@ router.get('/documento/:documento_identificacao', async (req, res) => {
     }
 })
 
-// Por telefone
-router.get('/telefone/:telefone', async (req, res) => {
+// Por celular
+router.get('/celular/:celular', async (req, res) => {
 
-    const telefone = req.params.telefone
+    const celular = req.params.celular
 
     try {
 
-        const pessoa = await Person.find({ telefone: telefone })
+        const pessoa = await Person.find({ celular: celular })
 
         res.status(200).json(pessoa)
     } catch (error) {
@@ -104,15 +108,23 @@ router.patch('/documento/:documento_identificacao', async (req, res) => {
     const {
         nome,
         documento_identificacao,
-        tipo_pessoa,
-        telefone,
+        empresa,
+        orgão_setor,
+        endereço,
+        comercial,
+        celular,
+        outros,
     } = req.body
 
     const person = {
         nome,
         documento_identificacao,
-        tipo_pessoa,
-        telefone,
+        empresa,
+        orgão_setor,
+        endereço,
+        comercial,
+        celular,
+        outros,
     }
 
     try {
