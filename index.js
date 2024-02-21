@@ -13,9 +13,23 @@ app.use('/person', personRoutes)
 
 app.get('/', (req, res) => {
 
-    res.json({ msg: ' Olá, API Online! ' })
+  const message = {
+    title: 'Bem-vindo à API Super Legal!',
+    description: 'Esta API fornece acesso a dados incríveis sobre coisas super legais.',
+    features: [
+      'Funcionalidade 1',
+      'Funcionalidade 2',
+      'Funcionalidade 3',
+    ],
+    links: {
+      documentation: 'https://www.exemplo.com/docs',
+      support: 'https://www.exemplo.com/support',
+    },
+  };
 
-})
+  res.json(message);
+
+});
 
 const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASSWORD
