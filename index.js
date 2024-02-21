@@ -13,7 +13,7 @@ app.use('/person', personRoutes)
 
 app.get('/', (req, res) => {
 
-    res.json({ msg: ' Olá, teste ' })
+    res.json({ msg: ' Olá, API Online! ' })
 
 })
 
