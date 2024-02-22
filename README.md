@@ -23,26 +23,17 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
 - Buscar detalhes de um contato específico na lista telefônica por ID ou número de telefone.
 
 ## Estrutura do Diretório do Projeto
-
+  ├── index.js
 ├── models/
-
- ├── Person.js
- └── ...
-
+│ ├── Person.js
+│ └── ...
 ├── routes/
-
-├── personRoutes.js
-└── ...
-
+│ ├── personRoutes.js
+│ └── ...
 ├── .gitignore
-
-├── index.js
-
-├── README.md
-
 ├── package-lock.json
-
 └── package.json
+
 
 ## Informações de Contato:
 
