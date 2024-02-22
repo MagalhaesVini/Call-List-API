@@ -24,8 +24,6 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
 
 ## Estrutura do Diretório do Projeto
 
-├── index.js
-
 ├── models/
 
 │ ├── Person.js
@@ -39,6 +37,10 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
 │ └── ...
 
 ├── .gitignore
+
+├── index.js
+
+├── README.md
 
 ├── package-lock.json
 
