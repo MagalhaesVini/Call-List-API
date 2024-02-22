@@ -26,15 +26,15 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
 
 ├── models/
 
-    │ ├── Person.js
+│ ├── Person.js
 
-        │ └── ...
+│ └── ...
 
 ├── routes/
 
-    │ ├── personRoutes.js
+│ ├── personRoutes.js
 
-        │ └── ...
+│ └── ...
 
 ├── .gitignore
 
