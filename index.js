@@ -14,22 +14,20 @@ app.use('/person', personRoutes)
 app.get('/', (req, res) => {
 
   const message = {
-    title: 'Bem-vindo à API Super Legal!',
-    description: 'Esta API fornece acesso a dados incríveis sobre coisas super legais.',
+    title: 'Bem-vindo à API Lista Telefônica!',
+    description: 'Esta API permite gerenciar uma lista de contatos telefônicos.',
     features: [
-      'Funcionalidade 1',
-      'Funcionalidade 2',
-      'Funcionalidade 3',
+      'Adicionar um novo contato',
+      'Remover um contato',
+      'Atualizar detalhes de um contato',
+      'Obter lista de todos os contatos',
+      'Buscar detalhes de um contato específico'
     ],
     links: {
-      documentation: 'https://www.exemplo.com/docs',
-      support: 'https://www.exemplo.com/support',
-    },
+      documentation: 'Em breve',
+      support: 'Em breve'
+    }
   };
-
-  res.json(message);
-
-});
 
 const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASSWORD
