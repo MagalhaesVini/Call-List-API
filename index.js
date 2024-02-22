@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 const personRoutes = require('./routes/personRoutes');
 app.use('/person', personRoutes);
 
+app.set('json spaces', 2);
 app.get('/', (req, res) => {
 
   const message = {
