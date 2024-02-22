@@ -2,11 +2,11 @@
 
 ## Descrição
 
-    A API Lista Telefônica é uma API para gerenciar uma lista de contatos telefônicos.
+A API Lista Telefônica é uma API para gerenciar uma lista de contatos telefônicos.
 
 ## Como Usar
 
-    Para utilizar a API Lista Telefônica, siga estas etapas:
+Para utilizar a API Lista Telefônica, siga estas etapas:
 
     1. Faça uma solicitação HTTP para os endpoints fornecidos.
     2. Forneça os parâmetros necessários, como ID de contato ou número de telefone, conforme especificado na documentação.
@@ -23,6 +23,7 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
     - Buscar detalhes de um contato específico na lista telefônica por ID ou número de telefone.
 
 ## Estrutura do Diretório do Projeto
+
     ├── index.js
     ├── models/
     │ ├── Person.js
