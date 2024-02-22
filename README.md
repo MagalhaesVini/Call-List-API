@@ -1,18 +1,28 @@
-# Sobre Call List API
+# Sobre a Call List API
 
- Descrição:
+## Descrição
 
-    a
+A Call List API é uma API para gerenciar uma lista telefônica.
 
-## Como usar:
+## Como Usar
 
-  a
+Para usar a Call List API, siga estas etapas:
 
-## Funcionalidades:
+1. Faça uma solicitação HTTP para os endpoints fornecidos.
+2. Forneça os parâmetros necessários, como ID de pessoa ou número de telefone, conforme especificado na documentação.
+3. Receba uma resposta no formato JSON com os dados solicitados.
 
-    a
+## Funcionalidades
 
-## Estrutura do Diretório do Projeto:
+A Call List API oferece as seguintes funcionalidades:
+
+- Adicionar uma nova pessoa à lista telefônica.
+- Remover uma pessoa da lista telefônica.
+- Atualizar os detalhes de uma pessoa na lista telefônica.
+- Obter uma lista de todas as pessoas na lista telefônica.
+- Buscar detalhes de uma pessoa específica na lista telefônica por ID.
+
+## Estrutura do Diretório do Projeto
 
 ├─── models
 │   ├─── Person.js
