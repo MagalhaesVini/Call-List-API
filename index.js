@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     ],
     
     links: {
-      documentation: '[https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md]',
+      documentation: 'Em breve',
       support: 'Em breve'
     }
   };
