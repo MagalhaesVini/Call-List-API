@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
   const message = {
     title: 'Bem-vindo à API Lista Telefônica!',
     description: 'Esta API permite gerenciar uma lista de contatos telefônicos.',
+    
     features: [
       'Adicionar um novo contato',
       'Remover um contato',
@@ -24,8 +25,9 @@ app.get('/', (req, res) => {
       'Obter lista de todos os contatos',
       'Buscar detalhes de um contato específico'
     ],
+    
     links: {
-      documentation: './README.md',
+      documentation: '[https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md]',
       support: 'Em breve'
     }
   };
