@@ -20,7 +20,7 @@ A API Lista Telefônica oferece as seguintes funcionalidades:
     - Remover um contato da lista telefônica.
     - Atualizar os detalhes de um contato na lista telefônica.
     - Obter uma lista de todos os contatos na lista telefônica.
-    - Buscar detalhes de um contato específico na lista telefônica por ID ou número de telefone.
+    - Buscar detalhes de um contato específico na lista telefônica por nome ou número de telefone.
 
 ## Estrutura do Diretório do Projeto
 
