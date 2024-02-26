@@ -6,7 +6,7 @@ const Person = require('../models/Person')
 
 router.post('/', async (req, res) => {
 
-    const { nome, documento_identificacao, empresa, setor, endereço, comercial, celular, outros } = req.body
+    const { nome, documento_identificacao, tipo_pessoa, telefone } = req.body
 
     if (!nome) {
         res.status(422).json({ error: 'O nome é obrigatório!' })
