@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
       'Buscar detalhes de um contato específico'
     ],
     links: {
-      documentation: https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md,
+      documentation: './README.md',
       support: 'Em breve'
     }
   };
