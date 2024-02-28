@@ -100,13 +100,12 @@ router.get('/celular/:celular', async (req, res) => {
     }
 })
 
-// Atualizar Pessoa
-router.patch('/id/:id', async (req, res) => {
+// Atualizar Pessoas
+router.patch('/:id', async (req, res) => {
     const id = req.params.id;
 
     const {
         nome,
-        documento_identificacao,
         empresa,
         setor,
         endereço,
@@ -117,7 +116,6 @@ router.patch('/id/:id', async (req, res) => {
 
     const updatedFields = {
         nome,
-        documento_identificacao,
         empresa,
         setor,
         endereço,
@@ -127,19 +125,18 @@ router.patch('/id/:id', async (req, res) => {
     };
 
     try {
-        // Atualiza a pessoa pelo id
-        const updatePerson = await Person.findByIdAndUpdate(id, updatedFields, { new: true });
+        const updatedPerson = await Person.findByIdAndUpdate(id, updatedFields, { new: true });
 
-        if (!updatePerson) {
-            return res.status(404).json({ msg: 'A pessoa não foi encontrada' });
+        if (!updatedPerson) {
+            res.status(404).json({ msg: 'A pessoa não foi encontrada' });
+            return;
         }
 
-        res.status(200).json(updatePerson);
+        res.status(200).json(updatedPerson);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: error });
     }
 });
-
 
 // Deletar Pessoas
 router.delete('/documento/:documento_identificacao', async (req, res) => {
