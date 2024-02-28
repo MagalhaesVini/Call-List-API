@@ -56,7 +56,7 @@ router.get('/:nome', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.find({ nome: nome })
+        const pessoa = await Person.find({ nome: { $regex: new RegExp(nome, 'i') } });
 
         res.status(200).json(pessoa)
     } catch (error) {
