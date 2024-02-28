@@ -114,7 +114,7 @@ router.patch('/:id', async (req, res) => {
         outros,
     } = req.body;
 
-    const updatedFields = {
+    const updateFields = {
         nome,
         empresa,
         setor,
@@ -125,16 +125,16 @@ router.patch('/:id', async (req, res) => {
     };
 
     try {
-        const updatedPerson = await Person.findByIdAndUpdate(id, updatedFields, { new: true });
+        const updateResult = await Person.updateOne({ _id: id }, updateFields);
 
-        if (!updatedPerson) {
+        if (updateResult.n === 0) {
             res.status(404).json({ msg: 'A pessoa não foi encontrada' });
             return;
         }
 
-        res.status(200).json(updatedPerson);
+        res.status(200).json({ msg: 'Pessoa atualizada com sucesso' });
     } catch (error) {
-        res.status(500).json({ error: error });
+        res.status(500).json({ error: error.message });
     }
 });
 
