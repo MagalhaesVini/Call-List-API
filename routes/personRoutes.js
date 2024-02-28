@@ -101,7 +101,7 @@ router.get('/celular/:celular', async (req, res) => {
 })
 
 // Atualizar Pessoa
-router.patch('/pessoa/:id', async (req, res) => {
+router.patch('/id/:id', async (req, res) => {
     const id = req.params.id;
 
     const {
