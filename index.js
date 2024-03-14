@@ -15,7 +15,7 @@ app.set('json spaces', 2);
 app.get('/', (req, res) => {
 
   const message = {
-    title: 'Bem-vindo à API Lista Telefônica!',
+    title: 'Bem-vindo à API de Lista Telefônica!',
     description: 'Esta API permite gerenciar uma lista de contatos telefônicos.',
     
     features: [
