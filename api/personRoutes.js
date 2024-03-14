@@ -139,10 +139,10 @@ router.patch('/:id', async (req, res) => {
 });
 
 // Deletar Pessoas
-router.delete('/documento/:documento_identificacao', async (req, res) => {
-    const documento = req.params.documento_identificacao
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id
 
-    const pessoa = await Person.findOne({ documento_identificacao: documento })
+    const pessoa = await Person.findOne({  _id: id })
 
     if (!pessoa) {
         return res.status(422).json({ msg: 'A pessoa não foi encontrada' });
@@ -150,7 +150,7 @@ router.delete('/documento/:documento_identificacao', async (req, res) => {
 
     try {
 
-        await Person.deleteOne({ documento_identificacao: documento })
+        await Person.deleteOne({ _id: id })
         return res.status(200).json({ msg: 'Pessoa excluída com sucesso' })
 
     } catch (error) {
