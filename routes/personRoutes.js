@@ -56,7 +56,7 @@ router.get('/:nome', async (req, res) => {
 
     try {
 
-        const pessoa = await Person.find({ nome: nome })
+        const pessoa = await Person.find({ nome: { $regex: new RegExp(nome, 'i') } });
 
         res.status(200).json(pessoa)
     } catch (error) {
@@ -101,53 +101,48 @@ router.get('/celular/:celular', async (req, res) => {
 })
 
 // Atualizar Pessoas
-router.patch('/documento/:documento_identificacao', async (req, res) => {
-
-    const documento = req.params.documento_identificacao
+router.patch('/:id', async (req, res) => {
+    const id = req.params.id;
 
     const {
         nome,
-        documento_identificacao,
         empresa,
         setor,
         endereço,
         comercial,
         celular,
         outros,
-    } = req.body
+    } = req.body;
 
-    const person = {
+    const updateFields = {
         nome,
-        documento_identificacao,
         empresa,
         setor,
         endereço,
         comercial,
         celular,
         outros,
-    }
+    };
 
     try {
+        const updateResult = await Person.updateOne({ _id: id }, updateFields);
 
-        const updatePerson = await Person.updateOne({ documento_identificacao: documento }, person)
-
-        if (updatePerson.matchedCount === 0) {
-
-            res.status(422).json({ msg: 'A pessoa não foi encontrada' })
-            return
+        if (updateResult.n === 0) {
+            res.status(404).json({ msg: 'A pessoa não foi encontrada' });
+            return;
         }
 
-        res.status(200).json(person)
+        res.status(200).json({ msg: 'Pessoa atualizada com sucesso' });
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error.message });
     }
-})
+});
 
 // Deletar Pessoas
-router.delete('/documento/:documento_identificacao', async (req, res) => {
-    const documento = req.params.documento_identificacao
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id
 
-    const pessoa = await Person.findOne({ documento_identificacao: documento })
+    const pessoa = await Person.findOne({  _id: id })
 
     if (!pessoa) {
         return res.status(422).json({ msg: 'A pessoa não foi encontrada' });
@@ -155,7 +150,7 @@ router.delete('/documento/:documento_identificacao', async (req, res) => {
 
     try {
 
-        await Person.deleteOne({ documento_identificacao: documento })
+        await Person.deleteOne({ _id: id })
         return res.status(200).json({ msg: 'Pessoa excluída com sucesso' })
 
     } catch (error) {
