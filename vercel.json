@@ -8,7 +8,7 @@
     ],
     "routes": [
         {
-            "src": "(routes/personRoutes.js)",
+            "src": "personRoutes.js",
             "dest": "routes/personRoutes.js"
         }
     ]
