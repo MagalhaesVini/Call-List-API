@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
-const personRoutes = require('./routes/personRoutes');
+const personRoutes = require('.api/personRoutes');
 app.use('/person', personRoutes);
 
 app.set('json spaces', 2);
