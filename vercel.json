@@ -3,13 +3,13 @@
     "builds": [
         {
             "src": "index.js",
-            "use": "@vercel/node"
+            "use": "@vercel/node@experimental-esm"
         }
     ],
     "routes": [
         {
-            "src": "personRoutes.js",
-            "dest": "routes/personRoutes.js"
+            "src": "/api/person",
+            "dest": "/routes/personRoutes.js"
         }
     ]
 }
