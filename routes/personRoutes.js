@@ -106,6 +106,7 @@ router.patch('/:id', async (req, res) => {
 
     const {
         nome,
+        documento_identificacao,
         empresa,
         setor,
         endereço,
@@ -116,6 +117,7 @@ router.patch('/:id', async (req, res) => {
 
     const updateFields = {
         nome,
+        documento_identificacao,
         empresa,
         setor,
         endereço,
