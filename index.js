@@ -15,21 +15,26 @@ app.set('json spaces', 2);
 app.get('/', (req, res) => {
 
   const message = {
-    title: 'Bem-vindo à API de Lista Telefônica!',
-    description: 'Esta API permite gerenciar uma lista de contatos telefônicos.',
+    title: '📞 Bem-vindo à API de Lista Telefônica!',
+    description: 'Esta API permite gerenciar uma lista de contatos telefônicos de forma eficiente e fácil.',
     
     features: [
-      'Adicionar um novo contato',
-      'Remover um contato',
-      'Atualizar detalhes de um contato',
-      'Obter lista de todos os contatos',
-      'Buscar detalhes de um contato específico'
+      "➕ Adicionar um novo contato à lista telefônica",
+      "➖ Remover um contato da lista telefônica",
+      "🔄 Atualizar os detalhes de um contato na lista telefônica",
+      "📋 Obter uma lista de todos os contatos na lista telefônica",
+      "🔍 Buscar detalhes de um contato específico na lista telefônica por nome ou número de telefone"
     ],
     
-    links: {
-      documentation: 'Em breve',
-      support: 'Em breve'
+    documentation: {
+      url: 'https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md',
+      description: 'Confira nossa documentação completa no README do repositório no GitHub para obter detalhes sobre como usar cada endpoint e exemplos de uso.'
+    },    
+    support: {
+      url: 'https://github.com/MagalhaesVini/Call-List-API/issues',
+      description: 'Se precisar de ajuda ou quiser relatar um problema, acesse as issues do GitHub.'
     }
+
   };
 
   res.json(message);
