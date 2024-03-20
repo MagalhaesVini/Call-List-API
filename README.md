@@ -20,7 +20,7 @@ Esta API não requer autenticação.
 </br>
 1.  Adicionar uma Nova Pessoa
 
-    POST /pessoas
+    POST /person
 </br>
 Corpo da Solicitação:
 
@@ -37,23 +37,23 @@ Corpo da Solicitação:
 </br>
 2.  Visualizar Todas as Pessoas
 
-    GET /pessoas
+    GET /person
 </br>
 3.  Visualizar Pessoas por Nome
 
-    GET /pessoas/{nome}
+    GET /person/{nome}
 </br>
 4.  Visualizar Pessoas por Documento de Identificação
 
-    GET /pessoas/documento/{documento_identificacao}
+    GET /person/documento/{documento_identificacao}
 </br>
 5.  Visualizar Pessoas por Número de Celular
 
-    GET /pessoas/celular/{celular}
+    GET /person/celular/{celular}
 </br>
 6.  Atualizar os Detalhes de uma Pessoa
 
-    PATCH /pessoas/{id}
+    PATCH /person/{id}
 </br>
 Corpo da Solicitação:
 
@@ -70,7 +70,7 @@ Corpo da Solicitação:
 </br>
 7.  Remover uma Pessoa
 
-    DELETE /pessoas/{id}
+    DELETE /person/{id}
 
 ## Estrutura do Diretório do Projeto
 
